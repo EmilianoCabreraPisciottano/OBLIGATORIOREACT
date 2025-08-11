@@ -3,7 +3,7 @@ import React, { useRef, useState, useEffect } from 'react';
 import { useNavigate } from "react-router";
 import 'bootstrap/dist/css/bootstrap.min.css';  
 import { useDispatch } from "react-redux";
-import { agregarEvaluacion } from "../store/slices/evaluacionesSlice";
+import { agregarEvaluacion, cargarObjetivos } from "../store/slices/evaluacionesSlice";
 
 const AgregarEvaluacion = () => {
   const dispatch = useDispatch();
@@ -47,6 +47,7 @@ const AgregarEvaluacion = () => {
           if (data.codigo === 200 && data.objetivos) {
             console.log("Objetivos array:", data.objetivos);
             setObjetivos(data.objetivos);
+            dispatch(cargarObjetivos(data.objetivos));
           } else {
             console.error("Error en respuesta:", data);
             setError("Error al obtener los objetivos: " + (data.mensaje || "Respuesta inválida"));

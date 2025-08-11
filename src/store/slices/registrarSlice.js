@@ -1,4 +1,4 @@
-import {createSlice} from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
     listaUsuarios: []
@@ -6,7 +6,7 @@ const initialState = {
 
 export const registrarSlice = createSlice({
     name: 'registrar',
-    initialState,   
+    initialState,
     reducers: {
         agregarRegistro: (state, action) => {
             state.listaUsuarios.push(action.payload);
