@@ -18,6 +18,9 @@ export const evaluacionesSlice = createSlice({
     cargarObjetivos: (state, action) => {
       state.listaObjetivos = action.payload;
     },
+    eliminarRegistro: (state, action) => {
+      state.listaEvaluaciones = state.listaEvaluaciones.filter(evaluacion => evaluacion.id !== action.payload.id);
+    }
   },
 });
 
