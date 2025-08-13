@@ -95,7 +95,7 @@ const Registro = () => {
           pais.current.value = "";
           setError(false);
           
-          navigate("/menu"); // Auto-login después del registro
+          navigate("/login"); // Auto-login después del registro
         } else {
           setError(data.mensaje || "Error en el registro");
         }

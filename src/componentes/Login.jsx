@@ -46,8 +46,8 @@ const Login = () => {
         localStorage.setItem("token", data.token);
         localStorage.setItem("userId", data.id.toString());
         localStorage.setItem("usuario", campoUser);
-        
-        console.log("Login exitoso, navegando a menu");
+
+        console.log("Login exitoso, navegando al dashboard");
         navigate("/dashboard");
       } else {
         console.error("Error en login:", data.mensaje);
